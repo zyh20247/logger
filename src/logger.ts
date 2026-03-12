@@ -1,7 +1,7 @@
 import { LogLevelType, LogLevel, LogEntry, LogOutputStrategy } from './logger.types';
 import { ConsoleOutputStrategy } from './logger.strategies';
 
-// 辅助函数：获取优先级数值 (VERBOSE=0 ... ERROR=3)
+// 辅助函数：获取优先级数值 
 const getLevelPriority = (level: LogLevelType): number => {
   switch (level) {
     case 'VERBOSE': return 0;

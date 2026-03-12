@@ -19,8 +19,8 @@ export class ConsoleOutputStrategy implements LogOutputStrategy {
 
 /**
  * [扩展功能] 文件输出策略 (模拟)
- * 满足任务要求：展示未来扩展至写入文件的可能性。
- * 使用题目要求的模拟函数 NativeFileWriteSync。
+ * 未来扩展至写入文件的可能性。
+ * 
  */
 export class FileOutputStrategy implements LogOutputStrategy {
   private filePath: string;
@@ -31,18 +31,14 @@ export class FileOutputStrategy implements LogOutputStrategy {
 
   write(entry: LogEntry): void {
     const logLine = `${JSON.stringify(entry)}\n`;
-    
-    // 调用题目要求的模拟原生 API
     NativeFileWriteSync(this.filePath, logLine);
   }
 }
 
 /**
- * 题目要求的模拟原生文件写入 API
- * 在实际浏览器环境中不存在，此处仅作演示。
+ * 模拟
  */
 function NativeFileWriteSync(filePath: string, buffer: string): void {
-  // 模拟文件 IO 延迟
   console.groupCollapsed(`[File IO Mock] Writing to ${filePath}`);
   console.log(buffer.trim());
   console.groupEnd();
